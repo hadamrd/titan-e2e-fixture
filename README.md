@@ -42,3 +42,5 @@ cd frontend && npm install && npm run lint && npm test && npm run build
 - e2e run (shared workspace) 2026-05-17T22:41Z
 
 - e2e run (pool=20) 2026-05-17T22:48Z
+
+- gate-approval e2e 2026-05-17T23:32Z

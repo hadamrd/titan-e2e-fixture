@@ -23,6 +23,11 @@ parameters:
     default: ""
     description: Optional webhook the Notify stage POSTs the build report to.
 
+# Build trigger — the Titan trigger engine fires a build on this cron schedule
+# ('H' hashes the minute so builds spread, not a thundering herd on :00).
+triggers:
+  - cron: "H/15 * * * *"
+
 stages:
   - stage: Checkout
     steps:

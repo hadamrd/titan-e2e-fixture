@@ -34,3 +34,5 @@ cd backend && mvn verify
 # frontend
 cd frontend && npm install && npm run lint && npm test && npm run build
 ```
+
+- e2e trigger smoke test 2026-05-17T22:13Z

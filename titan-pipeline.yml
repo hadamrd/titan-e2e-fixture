@@ -88,7 +88,7 @@ stages:
   # ── Approval + report ───────────────────────────────────────────────────
   - gate: Publish Approval
     requiresApproval: true
-    approvers: [release-team]
+    approvers: [admin]
     dependsOn: [Backend Build, Frontend Build]
 
   - stage: Report

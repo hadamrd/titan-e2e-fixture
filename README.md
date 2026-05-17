@@ -38,3 +38,5 @@ cd frontend && npm install && npm run lint && npm test && npm run build
 - e2e trigger smoke test 2026-05-17T22:13Z
 
 - clean e2e run 2026-05-17T22:37Z
+
+- e2e run (shared workspace) 2026-05-17T22:41Z

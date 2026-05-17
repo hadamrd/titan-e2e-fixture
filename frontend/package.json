@@ -1,0 +1,19 @@
+{
+  "name": "titan-e2e-frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A tiny TypeScript frontend lib built by the Titan e2e pipeline.",
+  "scripts": {
+    "lint": "eslint src",
+    "test": "vitest run --reporter=junit --outputFile=test-results/junit.xml",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.12.2",
+    "vitest": "^2.1.4"
+  }
+}

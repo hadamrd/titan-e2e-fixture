@@ -1,0 +1,20 @@
+# Per-primitive fixture: gitTag with push:false (closes #785).
+# E2E spec asserts: build SUCCESS; the gitTag step's flow-node result_json carries
+# the resolved tag. push:false keeps the fixture remote clean during repeated
+# E2E runs; specs that need to assert a remote-side ref MUST override
+# push: true at trigger time.
+agent: linux
+
+parameters:
+  - name: TAG
+    type: string
+    required: true
+    description: "Tag to create; must be supplied at trigger time (no default)."
+
+stages:
+  - stage: Tag
+    steps:
+      - gitTag:
+          tag: "${{ params.TAG }}"
+          message: "titan e2e tag"
+          push: false

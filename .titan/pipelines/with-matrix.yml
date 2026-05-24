@@ -1,0 +1,13 @@
+# Per-primitive fixture: matrix fan-out (closes #785).
+# JAVA_VERSION x OS = 3 cells (3 x 1). E2E spec asserts: 3 stages spawned at parse
+# time named with the cell coordinates; each cell's echo includes its JAVA_VERSION.
+agent: linux
+
+stages:
+  - stage: Test
+    matrix:
+      axes:
+        JAVA_VERSION: [11, 17, 21]
+        OS: [linux]
+    steps:
+      - sh: "echo java=${matrix.JAVA_VERSION} os=${matrix.OS}"

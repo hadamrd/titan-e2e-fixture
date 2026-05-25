@@ -1,4 +1,6 @@
+agent: linux
+
 stages:
-  - name: smoke
+  - stage: Smoke
     steps:
-      - script: echo "discovered via push event, not crawler — #886"
+      - sh: "echo discovered via push event — #886"

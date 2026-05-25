@@ -1,0 +1,6 @@
+name: event-driven-test
+description: "Verifies #886 — webhook triggers immediate re-discovery (not 1h scheduler)"
+stages:
+  - name: smoke
+    steps:
+      - script: echo "discovered via push event, not crawler"

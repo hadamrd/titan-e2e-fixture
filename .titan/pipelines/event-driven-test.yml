@@ -1,6 +1,0 @@
-agent: linux
-
-stages:
-  - stage: Smoke
-    steps:
-      - sh: "echo discovered via push event — #886"

@@ -8,3 +8,4 @@ stages:
       - sh: "echo hello > out.txt"
       - archiveArtifacts:
           artifacts: "out.txt"
+# verify-final 2026-05-26T11:40:48Z

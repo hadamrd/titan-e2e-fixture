@@ -17,3 +17,4 @@ stages:
     dependsOn: [Approval]
     steps:
       - sh: "echo deployed"
+# rescan-trigger 2026-05-26T11:32:46Z

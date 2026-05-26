@@ -11,3 +11,4 @@ stages:
         OS: [linux]
     steps:
       - sh: "echo java=${matrix.JAVA_VERSION} os=${matrix.OS}"
+# rescan-trigger 2026-05-26T11:32:46Z

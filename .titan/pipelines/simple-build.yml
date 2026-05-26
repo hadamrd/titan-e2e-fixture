@@ -8,3 +8,4 @@ stages:
       - sh: "echo hello > out.txt"
       - archiveArtifacts:
           artifacts: "out.txt"
+# rescan-trigger 2026-05-26T11:32:46Z

@@ -24,3 +24,4 @@ stages:
       - sh: "echo ${{ params.GREETING }} ${{ params.MODE }}"
       - sh: "echo verbose"
         when: "params.VERBOSE"
+# rescan-trigger 2026-05-26T11:32:46Z

@@ -36,13 +36,18 @@ stages:
     dependsOn: [Build]
     steps:
       # Attempt-counter pattern: fails on attempts 1 + 2, succeeds on attempt 3.
-      # The counter file lives under /tmp so it survives across step retries
-      # within the same worker process. The step is `retry: 3` — three total
-      # attempts including the first; design/44 §2.
+      # The counter file lives in the per-build workspace so it survives across
+      # step retries within the same build, and is wiped between builds (so a
+      # fresh build always starts the counter at 0). The step is `retry: 3` —
+      # three total attempts including the first; design/44 §2.
+      #
+      # NOTE: do NOT use `$$` (shell PID) in the path — each retry runs a fresh
+      # shell with a different PID, so the counter would reset every attempt and
+      # the step would never succeed. See issue #954.
       - sh: |
           set -eu
-          COUNTER=/tmp/flaky-attempt-$$
-          # Bootstrap: if some prior build left this file, reset.
+          COUNTER="${TITAN_WORKSPACE:-/tmp}/flaky-attempt-counter"
+          # Bootstrap on first attempt; subsequent retries find the file.
           if [ ! -f "$COUNTER" ]; then echo 0 > "$COUNTER"; fi
           N=$(cat "$COUNTER")
           N=$((N + 1))

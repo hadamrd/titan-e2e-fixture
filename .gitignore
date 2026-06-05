@@ -1,6 +1,10 @@
-# Build outputs
+# Build output
+frontend/dist/
+frontend/node_modules/
 backend/target/
 backend/.m2-repo/
-frontend/node_modules/
-frontend/dist/
 frontend/test-results/
+
+# Never commit compiled JS next to the TS source — eslint lints src/ and the
+# stale CommonJS emit (require/exports) breaks `npm run lint`. tsc emits to dist/.
+frontend/src/*.js

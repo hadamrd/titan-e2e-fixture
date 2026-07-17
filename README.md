@@ -68,3 +68,5 @@ and assert a single behavior.
 These files are NOT discovered as build jobs unless the rig is configured to
 scan `.titan/pipelines/`. E2E specs typically load the YAML directly and POST
 to `POST /pipelines` (definition) + `POST /builds` (trigger).
+
+<!-- golden-path demo 2026-06-08T15:03:34Z -->
